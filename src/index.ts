@@ -1,29 +1,36 @@
-// src/index.ts
-
-// Import Node.js built-in modules
-import * as path from 'path';
-
-// We'll import our functions later
-// import { ... } from './commands/taskCommands';
+import { TaskCommands } from './commands/taskCommands';
 
 function main() {
-  // Get command line arguments (skip first 2 which are node and script path)
-  const args = process.argv.slice(2);
-  
-  // Check if user provided any arguments
-  if (args.length === 0) {
-    console.log('Please provide a command. Usage: task-cli <command> [arguments]');
-    return;
-  }
+    const args = process.argv.slice(2);
 
-  // Extract the command (first argument)
-  const command = args[0];
-  
-  console.log('Command received:', command);
-  console.log('All arguments:', args);
-  
-  // We'll add command handling logic here later
+    if (args.length === 0) {
+        console.log('Please provide a command. Usage: task-cli <command> [arguments]');
+        return;
+    }
+
+    const command = args[0];
+
+    // Handle different commands
+    switch (command) {
+        case 'add':
+            if (args[1]) {
+                TaskCommands.addTask(args[1]);
+            } else {
+                console.log('Please provide a task description. Usage: task-cli add "Your task"');
+            }
+            break;
+        case 'list':
+            if (args[1]) {
+                TaskCommands.listTasksByStatus(args[1] as 'todo' | 'in-progress' | 'done');
+            } else {
+                TaskCommands.listAllTasks();
+            }
+            break;
+            
+        default:
+            console.log(`Unknown command: ${command}`);
+            console.log('Available commands: add, list');
+    }
 }
 
-// Run the main function
 main();

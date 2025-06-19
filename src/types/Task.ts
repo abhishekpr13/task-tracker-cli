@@ -8,5 +8,6 @@ export interface Task {
 
 export interface TaskStorage {
     tasks: Task[];
-    nextID: number; //It will help us to keep the track of the next id we will assign
+    nextId: number; //It will help us to keep the track of the next id we will assign
 }
+
