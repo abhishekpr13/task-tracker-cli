@@ -2,17 +2,10 @@
   "tasks": [
     {
       "id": 1,
-      "description": "Buy groceries",
-      "status": "todo",
+      "description": "Buy groceries and cook dinner",
+      "status": "done",
       "createdAt": "2025-06-19T07:28:21.716Z",
-      "updatedAt": "2025-06-19T07:28:21.717Z"
-    },
-    {
-      "id": 2,
-      "description": "Learn TypeScript",
-      "status": "todo",
-      "createdAt": "2025-06-19T07:28:22.229Z",
-      "updatedAt": "2025-06-19T07:28:22.230Z"
+      "updatedAt": "2025-06-23T04:53:50.886Z"
     },
     {
       "id": 3,
